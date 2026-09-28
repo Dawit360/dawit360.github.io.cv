@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dawit Birhanu Mulu | Accounting & Computer Science</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #07111f;
+      color: #eef4ff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 17, 31, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    nav {
+      min-height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #51d7c6;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #a9b8ce;
+      transition: .25s ease;
+    }
+
+    nav a:hover {
+      color: white;
+      text-shadow:
+        0 0 10px rgba(81,215,198,.9),
+        0 0 25px rgba(81,215,198,.35);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      padding: 90px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: #51d7c6;
+      font-size: .8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 5.3rem);
+      line-height: 1;
+      margin: 14px 0 20px;
+    }
+
+    h1 span {
+      color: #70a8ff;
+    }
+
+    .lead {
+      color: #a9b8ce;
+      max-width: 750px;
+      font-size: 1.05rem;
+    }
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: #0d1a2d;
+      font-weight: 700;
+      transition:
+        transform .25s ease,
+        box-shadow .3s ease,
+        border-color .25s ease;
+    }
+
+    .btn-primary {
+      background: #51d7c6;
+      color: #06201c;
+      border-color: transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+
+      border-color: #51d7c6;
+
+      box-shadow:
+        0 0 16px rgba(81,215,198,.8),
+        0 0 38px rgba(81,215,198,.35);
+    }
+
+    /* =========================
+       PROFILE
+    ========================= */
+
+    .profile-card {
+      padding: 28px;
+      border-radius: 22px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(16,31,53,.96),
+          rgba(11,23,40,.96)
+        );
+      border: 1px solid rgba(255,255,255,.1);
+      box-shadow: 0 18px 50px rgba(0,0,0,.25);
+      transition: .3s ease;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(81,215,198,.75);
+
+      box-shadow:
+        0 0 20px rgba(81,215,198,.55),
+        0 0 55px rgba(81,215,198,.2),
+        0 18px 50px rgba(0,0,0,.35);
+    }
+
+    .profile-photo {
+      display: block;
+      width: 190px;
+      height: 190px;
+      margin: 0 auto 24px;
+
+      object-fit: cover;
+      object-position: center top;
+
+      border-radius: 50%;
+
+      border: 4px solid rgba(255,255,255,.15);
+
+      box-shadow:
+        0 0 20px rgba(81,215,198,.18);
+
+      transition: .35s ease;
+    }
+
+    .profile-card:hover .profile-photo {
+      transform: scale(1.04);
+
+      box-shadow:
+        0 0 25px rgba(81,215,198,.9),
+        0 0 60px rgba(81,215,198,.3);
+    }
+
+    .metric {
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .metric:last-child {
+      border-bottom: none;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.1rem;
+    }
+
+    .metric span {
+      color: #a9b8ce;
+      font-size: .9rem;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-title {
+      margin-bottom: 32px;
+    }
+
+    .section-title small {
+      color: #51d7c6;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 800;
+    }
+
+    .section-title h2 {
+      margin-top: 8px;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .section-title p {
+      color: #a9b8ce;
+      margin-top: 8px;
+    }
+
+    /* =========================
+       CARDS
+    ========================= */
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      padding: 26px;
+      background: rgba(13,26,45,.85);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 20px;
+      transition: .3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(81,215,198,.7);
+
+      box-shadow:
+        0 0 20px rgba(81,215,198,.4),
+        0 0 50px rgba(81,215,198,.15);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .muted {
+      color: #a9b8ce;
+    }
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+      margin-top: 18px;
+    }
+
+    .skill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #101f35;
+      border: 1px solid rgba(255,255,255,.1);
+      font-size: .85rem;
+      transition: .25s ease;
+    }
+
+    .skill:hover {
+      transform: translateY(-3px);
+      border-color: #51d7c6;
+
+      box-shadow:
+        0 0 13px rgba(81,215,198,.55);
+    }
+
+    /* =========================
+       EXPERIENCE
+    ========================= */
+
+    .experience {
+      display: grid;
+      gap: 18px;
+    }
+
+    .experience-item {
+      padding: 24px;
+      border-left: 3px solid #51d7c6;
+      border-radius: 0 18px 18px 0;
+      background: rgba(13,26,45,.7);
+      transition: .3s ease;
+    }
+
+    .experience-item:hover {
+      transform: translateX(5px);
+      box-shadow:
+        0 0 25px rgba(81,215,198,.25);
+    }
+
+    .experience-item small {
+      color: #51d7c6;
+      font-weight: 700;
+    }
+
+    .experience-item ul {
+      margin-top: 12px;
+      padding-left: 20px;
+      color: #a9b8ce;
+    }
+
+    /* =========================
+       DOCUMENTS
+    ========================= */
+
+    .documents {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .document-card {
+      padding: 25px;
+      border-radius: 20px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(16,31,53,.96),
+          rgba(11,23,40,.96)
+        );
+
+      border: 1px solid rgba(255,255,255,.1);
+
+      transition: .3s ease;
+    }
+
+    .document-card:hover {
+      transform: translateY(-6px);
+
+      border-color: rgba(81,215,198,.75);
+
+      box-shadow:
+        0 0 20px rgba(81,215,198,.5),
+        0 0 55px rgba(81,215,198,.2);
+    }
+
+    .document-icon {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .document-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .document-card p {
+      color: #a9b8ce;
+    }
+
+    /* PDF PREVIEW */
+
+    .pdf-preview {
+      margin-top: 18px;
+
+      border-radius: 14px;
+
+      overflow: hidden;
+
+      background: white;
+
+      border: 1px solid rgba(255,255,255,.15);
+    }
+
+    .pdf-preview iframe {
+      width: 100%;
+      height: 320px;
+      display: block;
+      border: none;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+    }
+
+    .contact-card {
+      padding: 20px;
+      background: #0d1a2d;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 15px;
+    }
+
+    .contact-card small {
+      display: block;
+      color: #a9b8ce;
+      margin-bottom: 5px;
+    }
+
+    .contact-card a {
+      color: #51d7c6;
+      font-weight: 700;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 0 40px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: #a9b8ce;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .hero-grid,
+      .grid-2,
+      .documents {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      nav ul {
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: min(100% - 24px, 1160px);
+      }
+
+      .hero {
+        padding-top: 55px;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-photo {
+        width: 155px;
+        height: 155px;
+      }
+
+      .pdf-preview iframe {
+        height: 260px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<header>
+
+  <div class="container">
+
+    <nav>
+
+      <a href="#home" class="logo">
+        Dawit<span>.</span>
+      </a>
+
+      <ul>
+
+        <li>
+          <a href="#about">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="#skills">
+            Skills
+          </a>
+        </li>
+
+        <li>
+          <a href="#experience">
+            Experience
+          </a>
+        </li>
+
+        <li>
+          <a href="#education">
+            Education
+          </a>
+        </li>
+
+        <li>
+          <a href="#documents">
+            Documents
+          </a>
+        </li>
+
+        <li>
+          <a href="#contact">
+            Contact
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section
+  id="home"
+  class="hero"
+>
+
+  <div class="container">
+
+    <div class="hero-grid">
+
+
+      <div>
+
+        <div class="eyebrow">
+          Accounting • Computer Science • Digital Skills
+        </div>
+
+
+        <h1>
+          Dawit Birhanu
+          <span>Mulu</span>
+        </h1>
+
+
+        <p class="lead">
+
+          Accounting and Computer Science professional with
+          a cross-disciplinary background in financial operations,
+          bookkeeping, financial reporting, programming,
+          data analysis, computer systems, Artificial Intelligence,
+          Data Engineering and advanced digital skills.
+
+        </p>
+
+
+        <div class="buttons">
+
+          <!-- CV -->
+
+          <a
+            class="btn btn-primary"
+            href="Dawit_Birhanu_Mulu_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View CV
+          </a>
+
+
+          <a
+            class="btn"
+            href="./Dawit_Birhanu_Mulu_CV.pdf"
+            download="Dawit_Birhanu_Mulu_CV.pdf"
+            onclick="downloadCV(event)"
+          >
+            Download CV
+          </a>
+
+
+          <a
+            class="btn"
+            href="#contact"
+          >
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- PROFILE -->
+
+      <aside class="profile-card">
+
+        <img
+          class="profile-photo"
+          src="pro.png"
+          alt="Professional portrait of Dawit Birhanu Mulu"
+          width="190"
+          height="190"
+          loading="eager"
+        >
+
+
+        <div class="metric">
+
+          <strong>
+            Accounting & Finance
+          </strong>
+
+          <span>
+            Financial accounting, bookkeeping,
+            payroll, VAT, tax, bank reconciliation,
+            IFRS and auditing.
+          </span>
+
+        </div>
+
+
+        <div class="metric">
+
+          <strong>
+            Computer Science
+          </strong>
+
+          <span>
+            Programming, data analysis,
+            computer systems, IT,
+            AI and data engineering foundations.
+          </span>
+
+        </div>
+
+
+        <div class="metric">
+
+          <strong>
+            Digital Skills
+          </strong>
+
+          <span>
+            Trading, Artificial Intelligence,
+            Data Engineering and advanced digital skills.
+          </span>
+
+        </div>
+
+      </aside>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+====================================================== -->
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>
+        About
+      </small>
+
+      <h2>
+        Two disciplines, one professional toolkit.
+      </h2>
+
+      <p>
+        A combined academic background in Accounting,
+        Finance and Computer Science.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <p>
+
+        Dawit Birhanu Mulu combines Accounting and Finance
+        knowledge with Computer Science education and
+        digital technology training.
+
+      </p>
+
+      <br>
+
+      <p>
+
+        This interdisciplinary profile connects financial
+        operations and accounting practice with programming,
+        computing, data analysis and emerging digital technologies.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BACKGROUNDS
+====================================================== -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>
+        Professional Background
+      </small>
+
+      <h2>
+        Accounting + Computer Science
+      </h2>
+
+    </div>
+
+
+    <div class="grid-2">
+
+
+      <article class="card">
+
+        <h3>
+          Accounting & Finance
+        </h3>
+
+        <p class="muted">
+
+          Financial accounting, bookkeeping,
+          payroll accounting, tax computation,
+          VAT reconciliation, VAT declaration,
+          bank reconciliation, financial management,
+          auditing and IFRS.
+
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <h3>
+          Computer Science
+        </h3>
+
+        <p class="muted">
+
+          Computer Science fundamentals,
+          programming foundations, data analysis,
+          computer systems, information technology,
+          Artificial Intelligence and Data Engineering.
+
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SKILLS
+====================================================== -->
+
+<section id="skills">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>
+        Skills
+      </small>
+
+      <h2>
+        Core Skills
+      </h2>
+
+    </div>
+
+
+    <div class="grid-2">
+
+
+      <article class="card">
+
+        <h3>
+          Accounting
+        </h3>
+
+        <ul class="skills">
+
+          <li class="skill">
+            Financial Accounting
+          </li>
+
+          <li class="skill">
+            Bookkeeping
+          </li>
+
+          <li class="skill">
+            Payroll Accounting
+          </li>
+
+          <li class="skill">
+            Bank Reconciliation
+          </li>
+
+          <li class="skill">
+            VAT Reconciliation
+          </li>
+
+          <li class="skill">
+            VAT Declaration
+          </li>
+
+          <li class="skill">
+            Financial Reporting
+          </li>
+
+          <li class="skill">
+            IFRS
+          </li>
+
+          <li class="skill">
+            Peachtree
+          </li>
+
+        </ul>
+
+      </article>
+
+
+
+      <article class="card">
+
+        <h3>
+          Computer Science & Digital
+        </h3>
+
+        <ul class="skills">
+
+          <li class="skill">
+            C
+          </li>
+
+          <li class="skill">
+            C++
+          </li>
+
+          <li class="skill">
+            C#
+          </li>
+
+          <li class="skill">
+            Java
+          </li>
+
+          <li class="skill">
+            Python
+          </li>
+
+          <li class="skill">
+            PHP
+          </li>
+
+          <li class="skill">
+            SQL
+          </li>
+
+          <li class="skill">
+            Bash
+          </li>
+
+          <li class="skill">
+            Data Analysis
+          </li>
+
+          <li class="skill">
+            Computer Systems
+          </li>
+
+          <li class="skill">
+            Database Systems
+          </li>
+
+          <li class="skill">
+            Artificial Intelligence
+          </li>
+
+          <li class="skill">
+            Data Engineering
+          </li>
+
+        </ul>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPERIENCE
+====================================================== -->
+
+<section id="experience">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>
+        Experience
+      </small>
+
+      <h2>
+        Professional Experience
+      </h2>
+
+    </div>
+
+
+    <div class="experience">
+
+
+      <article class="experience-item">
+
+        <small>
+          Assistant Accountant — Internship
+        </small>
+
+        <h3>
+          Haily(e) General Construction Consultancy PLC
+        </h3>
+
+        <p class="muted">
+          Addis Ababa · November 12, 2024 – February 2026
+        </p>
+
+        <ul>
+
+          <li>
+            Bookkeeping and financial record keeping
+          </li>
+
+          <li>
+            Bank reconciliation
+          </li>
+
+          <li>
+            VAT reconciliation and VAT declaration
+          </li>
+
+          <li>
+            Finance department support
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <article class="experience-item">
+
+        <small>
+          Junior Accountant / Staff Accountant Intern
+        </small>
+
+        <h3>
+          AZ Real-Estate PLC
+        </h3>
+
+        <p class="muted">
+          Addis Ababa, Kazanchis · 2014–2015 EC
+        </p>
+
+        <ul>
+
+          <li>
+            Bookkeeping and record keeping
+          </li>
+
+          <li>
+            Bank reconciliation
+          </li>
+
+          <li>
+            VAT reconciliation
+          </li>
+
+          <li>
+            VAT declaration through the Ministry of Revenue website
+          </li>
+
+        </ul>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EDUCATION
+====================================================== -->
+
+<section id="education">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>
+        Education
+      </small>
+
+      <h2>
+        Academic Background
+      </h2>
+
+    </div>
+
+
+    <div class="grid-2">
+
+
+      <article class="card">
+
+        <h3>
+          BA in Accounting and Finance
+        </h3>
+
+        <p>
+
+          <strong>
+            Addis Ababa University
+          </strong>
+
+          <br>
+
+          College of Business and Economics
+
+        </p>
+
+        <p class="muted">
+
+          Completed July 4, 2024
+
+          <br>
+
+          Exit Exam: 61.00%
+
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <h3>
+          Bachelor's Degree in Computer Science
+        </h3>
+
+        <p>
+
+          <strong>
+            St. Mary's University
+          </strong>
+
+          <br>
+
+          Addis Ababa
+
+        </p>
+
+        <p class="muted">
+          2011–2014 EC
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <h3>
+          Qiyas Advanced Digital Skills
+        </h3>
+
+        <p>
+
+          <strong>
+            Addis Ababa University
+          </strong>
+
+          <br>
+
+          4 Kilo Campus
+
+        </p>
+
+        <p class="muted">
+
+          Trading · Artificial Intelligence
+          · Data Engineering
+
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DOCUMENTS
+====================================================== -->
+
+<section id="documents">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>
+        Documents
+      </small>
+
+      <h2>
+        CV, Certificate & Internship
+      </h2>
+
+      <p>
+        Open or download the professional documents.
+      </p>
+
+    </div>
+
+
+    <div class="documents">
+
+
+      <!-- CV -->
+
+      <article class="document-card">
+
+        <div class="document-icon">
+          📄
+        </div>
+
+        <h3>
+          Curriculum Vitae
+        </h3>
+
+        <p>
+          Complete professional CV.
+        </p>
+
+        <div class="buttons">
+
+          <a
+            class="btn btn-primary"
+            href="Dawit_Birhanu_Mulu_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open CV
+          </a>
+
+          <a
+            class="btn"
+            href="./Dawit_Birhanu_Mulu_CV.pdf"
+            download="Dawit_Birhanu_Mulu_CV.pdf"
+            onclick="downloadCV(event)"
+          >
+            Download
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PEACHTREE / IFRS -->
+
+      <article class="document-card">
+
+        <div class="document-icon">
+          📊
+        </div>
+
+        <h3>
+          Peachtree Accounting Software & IFRS
+        </h3>
+
+        <p>
+          Peachtree software and IFRS training certificate.
+        </p>
+
+
+        <div class="buttons">
+
+          <a
+            class="btn btn-primary"
+            href="Peachtree_IFRS_Certificate.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Certificate
+          </a>
+
+          <a
+            class="btn"
+            href="Peachtree_IFRS_Certificate.pdf"
+            download
+          >
+            Download
+          </a>
+
+        </div>
+
+
+        <div class="pdf-preview">
+
+          <iframe
+            src="Peachtree_IFRS_Certificate.pdf"
+            title="Peachtree Accounting Software and IFRS Certificate"
+            loading="lazy"
+          ></iframe>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- INTERNSHIP -->
+
+      <article class="document-card">
+
+        <div class="document-icon">
+          💼
+        </div>
+
+        <h3>
+          Haily(e) Internship
+        </h3>
+
+        <p>
+          Assistant Accountant internship document.
+        </p>
+
+
+        <div class="buttons">
+
+          <a
+            class="btn btn-primary"
+            href="Haily_Internship.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Internship
+          </a>
+
+          <a
+            class="btn"
+            href="Haily_Internship.pdf"
+            download
+          >
+            Download
+          </a>
+
+        </div>
+
+
+        <div class="pdf-preview">
+
+          <iframe
+            src="Haily_Internship.pdf"
+            title="Haily internship document"
+            loading="lazy"
+          ></iframe>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+====================================================== -->
+
+<section id="contact">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>
+        Contact
+      </small>
+
+      <h2>
+        Let's connect professionally.
+      </h2>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+
+      <div class="contact-card">
+
+        <small>
+          Email
+        </small>
+
+        <a
+          href="mailto:dawitbirhnau7799@gmail.com"
+        >
+          dawitbirhnau7799@gmail.com
+        </a>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <small>
+          Phone
+        </small>
+
+        <span>
+          0922513570
+        </span>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <small>
+          Additional Phone
+        </small>
+
+        <span>
+          0930289797 · 0911531556
+        </span>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <small>
+          Location
+        </small>
+
+        <span>
+          Addis Ababa, Ethiopia
+        </span>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <small>
+          GitHub
+        </small>
+
+        <a
+          href="https://github.com/Dawit360"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          github.com/Dawit360
+        </a>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <small>
+          Languages
+        </small>
+
+        <span>
+          Amharic · English
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+  <div class="container">
+
+    <strong>
+      Dawit Birhanu Mulu
+    </strong>
+
+    <p>
+      Accounting & Computer Science
+    </p>
+
+  </div>
+
+</footer>
+
+
+
+<script>
+  async function downloadCV(event) {
+    event.preventDefault();
+
+    const pdfUrl = "./Dawit_Birhanu_Mulu_CV.pdf";
+
+    try {
+      const response = await fetch(pdfUrl);
+      if (!response.ok) throw new Error("CV file not found");
+
+      const blob = await response.blob();
+      const blobUrl = URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+      link.href = blobUrl;
+      link.download = "Dawit_Birhanu_Mulu_CV.pdf";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      URL.revokeObjectURL(blobUrl);
+    } catch (error) {
+      // Fallback for GitHub Pages/browser restrictions
+      window.location.href = pdfUrl;
+    }
+  }
+</script>
+</body>
+</html>
