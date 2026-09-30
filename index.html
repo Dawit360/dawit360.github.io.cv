@@ -8,14 +8,18 @@
 
   <meta
     name="description"
-    content="Dawit Birhanu Mulu - Accounting and Computer Science professional portfolio, CV and certificates."
+    content="Dawit Birhanu Mulu - Accounting, Computer Science, AI and Data Engineering professional portfolio."
   >
 
   <style>
+    /* =========================
+       RESET
+    ========================== */
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -30,8 +34,8 @@
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
     }
 
     .container {
@@ -39,6 +43,7 @@
       max-width: 1100px;
       margin: auto;
     }
+
 
     /* =========================
        NAVIGATION
@@ -48,43 +53,58 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(11, 15, 25, 0.95);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
+      background: rgba(11, 15, 25, 0.96);
+      border-bottom: 1px solid rgba(0, 234, 255, 0.15);
+      backdrop-filter: blur(12px);
     }
 
     .nav-container {
+      min-height: 65px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 0;
+      gap: 20px;
     }
 
     .logo {
-      font-size: 22px;
+      font-size: 21px;
       font-weight: bold;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: #00eaff;
     }
 
     .nav-links {
       display: flex;
-      gap: 20px;
       list-style: none;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .nav-links a {
-      color: #ddd;
-      transition: 0.3s;
+      color: #cccccc;
+      font-size: 14px;
+      transition: 0.3s ease;
     }
 
     .nav-links a:hover {
       color: #00eaff;
+      text-shadow: 0 0 10px #00eaff;
     }
+
 
     /* =========================
        HERO
     ========================== */
 
     .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
       padding: 80px 0;
     }
 
@@ -92,7 +112,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 50px;
+      gap: 60px;
     }
 
     .hero-text {
@@ -100,33 +120,53 @@
     }
 
     .hero-text h1 {
-      font-size: 46px;
-      margin-bottom: 15px;
+      font-size: clamp(35px, 6vw, 58px);
+      line-height: 1.15;
+      margin-bottom: 18px;
     }
 
     .hero-text h1 span {
       color: #00eaff;
+      text-shadow: 0 0 18px rgba(0, 234, 255, 0.45);
     }
 
     .hero-text h2 {
-      color: #aaa;
       font-size: 23px;
+      color: #b9c0ca;
       margin-bottom: 20px;
+      font-weight: normal;
     }
 
     .hero-text p {
-      color: #ccc;
-      max-width: 650px;
+      color: #c8c8c8;
+      max-width: 700px;
+      font-size: 17px;
     }
 
+
+    /* =========================
+       PROFILE IMAGE
+    ========================== */
+
     .profile-picture {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
+      width: 230px;
+      height: 230px;
       object-fit: cover;
+      border-radius: 50%;
       border: 3px solid #00eaff;
-      box-shadow: 0 0 30px rgba(0,234,255,0.4);
+      box-shadow:
+        0 0 20px rgba(0, 234, 255, 0.45),
+        0 0 50px rgba(0, 234, 255, 0.15);
+      transition: 0.4s ease;
     }
+
+    .profile-picture:hover {
+      transform: scale(1.04);
+      box-shadow:
+        0 0 30px rgba(0, 234, 255, 0.65),
+        0 0 70px rgba(0, 234, 255, 0.2);
+    }
+
 
     /* =========================
        BUTTONS
@@ -134,47 +174,58 @@
 
     .buttons {
       display: flex;
-      gap: 15px;
       flex-wrap: wrap;
-      margin-top: 30px;
+      gap: 12px;
+      margin-top: 28px;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 22px;
+      padding: 11px 19px;
       border-radius: 8px;
       border: 1px solid #00eaff;
       color: #00eaff;
-      transition: 0.3s;
+      background: transparent;
+      font-size: 15px;
+      transition: all 0.3s ease;
       cursor: pointer;
     }
 
     .btn:hover {
       background: #00eaff;
-      color: #000;
-      box-shadow: 0 0 20px rgba(0,234,255,0.5);
-      transform: translateY(-2px);
+      color: #000000;
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
     }
 
     .btn-primary {
       background: #00eaff;
-      color: #000;
+      color: #000000;
     }
+
+    .btn-primary:hover {
+      background: #ffffff;
+      border-color: #ffffff;
+      box-shadow: 0 0 20px rgba(255,255,255,0.35);
+    }
+
 
     /* =========================
        SECTIONS
     ========================== */
 
     section {
-      padding: 70px 0;
+      padding: 80px 0;
     }
 
     section h2 {
       text-align: center;
-      font-size: 32px;
-      margin-bottom: 40px;
+      font-size: 34px;
       color: #00eaff;
+      margin-bottom: 40px;
+      text-shadow: 0 0 12px rgba(0,234,255,0.25);
     }
+
 
     /* =========================
        CARDS
@@ -183,43 +234,56 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+      gap: 24px;
     }
 
     .card {
       background: #111827;
-      padding: 25px;
-      border-radius: 15px;
       border: 1px solid rgba(255,255,255,0.08);
-      transition: 0.3s;
+      border-radius: 15px;
+      padding: 26px;
+      transition: 0.35s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
       border-color: #00eaff;
-      box-shadow: 0 0 25px rgba(0,234,255,0.15);
+      box-shadow:
+        0 0 20px rgba(0,234,255,0.14),
+        0 10px 30px rgba(0,0,0,0.25);
     }
 
     .card h3 {
+      font-size: 21px;
       margin-bottom: 10px;
-      color: #fff;
+      color: #ffffff;
     }
 
-    .card p,
-    .card li {
-      color: #bbb;
+    .card p {
+      color: #bbbbbb;
     }
 
     .card ul {
       padding-left: 20px;
+      margin-top: 15px;
     }
 
+    .card li {
+      color: #c5c5c5;
+      margin-bottom: 8px;
+    }
+
+    .muted {
+      color: #999999 !important;
+    }
+
+
     /* =========================
-       SKILLS CLASSIFICATION
+       SKILLS
     ========================== */
 
     .skill-category {
-      margin-bottom: 35px;
+      margin-bottom: 40px;
     }
 
     .skill-category h3 {
@@ -235,26 +299,28 @@
 
     .skills {
       display: flex;
+      justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
       gap: 12px;
-      justify-content: center;
     }
 
     .skill {
-      padding: 10px 16px;
+      padding: 10px 17px;
+      border: 1px solid #293444;
       background: #111827;
-      border: 1px solid #263244;
-      border-radius: 20px;
-      color: #ddd;
-      transition: 0.3s;
+      border-radius: 30px;
+      color: #dddddd;
+      transition: 0.3s ease;
     }
 
     .skill:hover {
-      border-color: #00eaff;
       color: #00eaff;
+      border-color: #00eaff;
+      transform: translateY(-3px);
       box-shadow: 0 0 15px rgba(0,234,255,0.2);
-      transform: translateY(-2px);
     }
+
 
     /* =========================
        DOCUMENTS
@@ -264,11 +330,13 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      min-height: 230px;
     }
 
     .document-card .buttons {
       margin-top: 25px;
     }
+
 
     /* =========================
        CONTACT
@@ -279,79 +347,94 @@
     }
 
     .contact p {
-      margin: 10px 0;
-      color: #ccc;
+      margin: 12px 0;
+      color: #cccccc;
     }
 
     .contact a {
       color: #00eaff;
     }
 
+    .contact a:hover {
+      text-shadow: 0 0 10px #00eaff;
+    }
+
+
     /* =========================
        FOOTER
     ========================== */
 
     footer {
-      text-align: center;
-      padding: 30px;
       border-top: 1px solid rgba(255,255,255,0.1);
-      color: #888;
+      text-align: center;
+      padding: 30px 15px;
+      color: #888888;
     }
+
 
     /* =========================
        MOBILE
     ========================== */
 
-    @media (max-width: 700px) {
+    @media (max-width: 750px) {
+
+      .nav-container {
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        gap: 10px 14px;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
 
       .hero-content {
         flex-direction: column-reverse;
         text-align: center;
       }
 
-      .hero-text h1 {
-        font-size: 35px;
+      .profile-picture {
+        width: 190px;
+        height: 190px;
       }
 
-      .hero-text h2 {
-        font-size: 19px;
+      .hero-text p {
+        margin: auto;
       }
 
       .buttons {
         justify-content: center;
       }
 
-      .nav-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .nav-links {
-        gap: 10px;
-        font-size: 14px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .profile-picture {
-        width: 190px;
-        height: 190px;
+      section {
+        padding: 60px 0;
       }
     }
+
   </style>
 </head>
 
+
 <body>
+
 
   <!-- =========================
        NAVIGATION
   ========================== -->
 
   <nav>
+
     <div class="container nav-container">
 
       <div class="logo">
-        Dawit Birhanu Mulu
+        Dawit <span>Birhanu Mulu</span>
       </div>
 
       <ul class="nav-links">
@@ -364,6 +447,7 @@
       </ul>
 
     </div>
+
   </nav>
 
 
@@ -386,33 +470,42 @@
         </h2>
 
         <p>
-          Computer Scientist and Accounting & Finance graduate with
-          interests in software development, artificial intelligence,
-          data engineering, accounting systems and information technology.
+          Computer Science graduate with an academic background in
+          Accounting and Finance, with interests in Artificial Intelligence,
+          Data Engineering, software development and technology-driven
+          solutions.
         </p>
+
 
         <div class="buttons">
 
-          <!-- VIEW CV -->
+          <!-- VIEW CV
+               IMPORTANT:
+               NO "download" ATTRIBUTE HERE
+          -->
           <a
-            href="Dawit_Birhanu_Mulu_CV.pdf"
+            href="./Dawit_Birhanu_Mulu_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             class="btn btn-primary"
           >
-            View CV
+            👁 View CV
           </a>
 
-          <!-- DOWNLOAD CV -->
+
+          <!-- DOWNLOAD CV
+               IMPORTANT:
+               "download" ATTRIBUTE IS ONLY HERE
+          -->
           <a
-            href="Dawit_Birhanu_Mulu_CV.pdf"
+            href="./Dawit_Birhanu_Mulu_CV.pdf"
             download="Dawit_Birhanu_Mulu_CV.pdf"
             class="btn"
           >
-            Download CV
+            ⬇ Download CV
           </a>
 
-          <!-- GITHUB -->
+
           <a
             href="https://github.com/Dawit360"
             target="_blank"
@@ -426,9 +519,10 @@
 
       </div>
 
-      <!-- YOUR ACTUAL IMAGE -->
+
+      <!-- EXACT IMAGE FILE NAME -->
       <img
-        src="pro.png"
+        src="./pro.png"
         alt="Dawit Birhanu Mulu"
         class="profile-picture"
       >
@@ -452,10 +546,9 @@
 
         <p>
           I am Dawit Birhanu Mulu, a Computer Science graduate with
-          an academic background in Accounting and Finance. I am
-          interested in combining technology, accounting, artificial
-          intelligence and data engineering to build practical
-          solutions.
+          an academic background in Accounting and Finance. My interests
+          include software development, artificial intelligence,
+          data engineering, accounting systems and technology.
         </p>
 
       </div>
@@ -477,12 +570,13 @@
 
       <div class="grid">
 
+
         <div class="card">
 
           <h3>Computer Science</h3>
 
           <p>
-            St. Mary's University
+            <strong>St. Mary's University</strong>
           </p>
 
           <p>
@@ -497,7 +591,9 @@
           <h3>Accounting & Finance</h3>
 
           <p>
-            Addis Ababa University
+            <strong>
+              Addis Ababa University
+            </strong>
           </p>
 
           <p>
@@ -512,7 +608,9 @@
           <h3>AI & Data Engineering</h3>
 
           <p>
-            Qiyas-AAU Training Program
+            <strong>
+              Qiyas-AAU Training Program
+            </strong>
           </p>
 
           <p>
@@ -550,11 +648,10 @@
           </strong>
         </p>
 
-        <p>
+        <p class="muted">
           Addis Ababa · November 12, 2024 – February 2026
         </p>
 
-        <br>
 
         <ul>
 
@@ -567,7 +664,7 @@
           </li>
 
           <li>
-            Applied accounting principles in daily financial operations.
+            Applied accounting principles in financial operations.
           </li>
 
           <li>
@@ -585,7 +682,7 @@
 
 
   <!-- =========================
-       CLASSIFIED SKILLS
+       SKILLS
   ========================== -->
 
   <section id="skills">
@@ -595,112 +692,208 @@
       <h2>Skills</h2>
 
 
-      <!-- ACCOUNTING & FINANCE -->
+      <!-- ACCOUNTING -->
 
       <div class="skill-category">
 
         <h3>
-          <span>▸</span> Accounting & Finance
+          <span>▸</span>
+          Accounting & Finance
         </h3>
 
         <div class="skills">
 
-          <div class="skill">Accounting Principles</div>
-          <div class="skill">Financial Records</div>
-          <div class="skill">Financial Operations</div>
-          <div class="skill">Finance</div>
-          <div class="skill">Accounting</div>
-          <div class="skill">Peachtree</div>
+          <div class="skill">
+            Accounting
+          </div>
+
+          <div class="skill">
+            Financial Accounting
+          </div>
+
+          <div class="skill">
+            Accounting Principles
+          </div>
+
+          <div class="skill">
+            Financial Records
+          </div>
+
+          <div class="skill">
+            Finance Operations
+          </div>
+
+          <div class="skill">
+            Peachtree Accounting
+          </div>
 
         </div>
 
       </div>
 
 
-      <!-- COMPUTER SCIENCE & SOFTWARE -->
+      <!-- COMPUTER SCIENCE -->
 
       <div class="skill-category">
 
         <h3>
-          <span>▸</span> Computer Science & Software
+          <span>▸</span>
+          Computer Science & Software
         </h3>
 
         <div class="skills">
 
-          <div class="skill">Computer Science</div>
-          <div class="skill">Python</div>
-          <div class="skill">C</div>
-          <div class="skill">C++</div>
-          <div class="skill">C#</div>
-          <div class="skill">HTML</div>
-          <div class="skill">CSS</div>
-          <div class="skill">JavaScript</div>
-          <div class="skill">Software Development</div>
+          <div class="skill">
+            Computer Science
+          </div>
+
+          <div class="skill">
+            Python
+          </div>
+
+          <div class="skill">
+            C
+          </div>
+
+          <div class="skill">
+            C++
+          </div>
+
+          <div class="skill">
+            C#
+          </div>
+
+          <div class="skill">
+            HTML
+          </div>
+
+          <div class="skill">
+            CSS
+          </div>
+
+          <div class="skill">
+            JavaScript
+          </div>
+
+          <div class="skill">
+            Software Development
+          </div>
 
         </div>
 
       </div>
 
 
-      <!-- AI & DATA ENGINEERING -->
+      <!-- AI AND DATA -->
 
       <div class="skill-category">
 
         <h3>
-          <span>▸</span> AI & Data Engineering
+          <span>▸</span>
+          AI & Data Engineering
         </h3>
 
         <div class="skills">
 
-          <div class="skill">Artificial Intelligence</div>
-          <div class="skill">Machine Learning</div>
-          <div class="skill">Data Engineering</div>
-          <div class="skill">Data Science</div>
-          <div class="skill">Natural Language Processing</div>
-          <div class="skill">Computer Vision</div>
+          <div class="skill">
+            Artificial Intelligence
+          </div>
+
+          <div class="skill">
+            Machine Learning
+          </div>
+
+          <div class="skill">
+            Data Science
+          </div>
+
+          <div class="skill">
+            Data Engineering
+          </div>
+
+          <div class="skill">
+            Natural Language Processing
+          </div>
+
+          <div class="skill">
+            Computer Vision
+          </div>
 
         </div>
 
       </div>
 
 
-      <!-- TOOLS & DEVELOPMENT ENVIRONMENT -->
+      <!-- TOOLS -->
 
       <div class="skill-category">
 
         <h3>
-          <span>▸</span> Tools & Development Environment
+          <span>▸</span>
+          Tools & Technologies
         </h3>
 
         <div class="skills">
 
-          <div class="skill">VS Code</div>
-          <div class="skill">Git</div>
-          <div class="skill">GitHub</div>
-          <div class="skill">GitHub Pages</div>
-          <div class="skill">Google Colab</div>
+          <div class="skill">
+            VS Code
+          </div>
+
+          <div class="skill">
+            Git
+          </div>
+
+          <div class="skill">
+            GitHub
+          </div>
+
+          <div class="skill">
+            GitHub Pages
+          </div>
+
+          <div class="skill">
+            Google Colab
+          </div>
 
         </div>
 
       </div>
 
 
-      <!-- PROFESSIONAL SKILLS -->
+      <!-- PROFESSIONAL -->
 
       <div class="skill-category">
 
         <h3>
-          <span>▸</span> Professional Skills
+          <span>▸</span>
+          Professional Skills
         </h3>
 
         <div class="skills">
 
-          <div class="skill">Teamwork</div>
-          <div class="skill">Communication</div>
-          <div class="skill">Accuracy</div>
-          <div class="skill">Problem Solving</div>
-          <div class="skill">Deadline Management</div>
-          <div class="skill">Technical Learning</div>
+          <div class="skill">
+            Teamwork
+          </div>
+
+          <div class="skill">
+            Communication
+          </div>
+
+          <div class="skill">
+            Problem Solving
+          </div>
+
+          <div class="skill">
+            Accuracy
+          </div>
+
+          <div class="skill">
+            Deadline Management
+          </div>
+
+          <div class="skill">
+            Continuous Learning
+          </div>
 
         </div>
 
@@ -724,7 +917,9 @@
       <div class="grid">
 
 
-        <!-- CV -->
+        <!-- =========================
+             CV
+        ========================== -->
 
         <div class="card document-card">
 
@@ -735,30 +930,44 @@
             </h3>
 
             <p>
-              View my complete professional CV.
+              View my complete professional CV online or download
+              a copy.
             </p>
 
           </div>
 
           <div class="buttons">
 
-            <!-- VIEW ONLY -->
+
+            <!--
+              VIEW BUTTON
+
+              NO DOWNLOAD ATTRIBUTE.
+              Opens PDF in a NEW TAB.
+            -->
+
             <a
-              href="Dawit_Birhanu_Mulu_CV.pdf"
+              href="./Dawit_Birhanu_Mulu_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-primary"
             >
-              View CV
+              👁 View CV
             </a>
 
-            <!-- DOWNLOAD -->
+
+            <!--
+              DOWNLOAD BUTTON
+
+              HAS DOWNLOAD ATTRIBUTE.
+            -->
+
             <a
-              href="Dawit_Birhanu_Mulu_CV.pdf"
+              href="./Dawit_Birhanu_Mulu_CV.pdf"
               download="Dawit_Birhanu_Mulu_CV.pdf"
               class="btn"
             >
-              Download
+              ⬇ Download
             </a>
 
           </div>
@@ -766,7 +975,9 @@
         </div>
 
 
-        <!-- INTERNSHIP CERTIFICATE -->
+        <!-- =========================
+             INTERNSHIP CERTIFICATE
+        ========================== -->
 
         <div class="card document-card">
 
@@ -777,30 +988,35 @@
             </h3>
 
             <p>
-              View my internship certificate.
+              View my internship certificate online or download
+              a copy.
             </p>
 
           </div>
 
           <div class="buttons">
 
-            <!-- VIEW ONLY -->
+
+            <!-- VIEW -->
+
             <a
-              href="Internship_Certificate.pdf"
+              href="./Internship_Certificate.pdf"
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-primary"
             >
-              View Certificate
+              👁 View Certificate
             </a>
 
+
             <!-- DOWNLOAD -->
+
             <a
-              href="Internship_Certificate.pdf"
+              href="./Internship_Certificate.pdf"
               download="Internship_Certificate.pdf"
               class="btn"
             >
-              Download
+              ⬇ Download
             </a>
 
           </div>
@@ -808,7 +1024,9 @@
         </div>
 
 
-        <!-- PEACHTREE CERTIFICATE -->
+        <!-- =========================
+             PEACHTREE CERTIFICATE
+        ========================== -->
 
         <div class="card document-card">
 
@@ -819,30 +1037,35 @@
             </h3>
 
             <p>
-              View my Peachtree training certificate.
+              View my Peachtree training certificate online or
+              download a copy.
             </p>
 
           </div>
 
           <div class="buttons">
 
-            <!-- VIEW ONLY -->
+
+            <!-- VIEW -->
+
             <a
-              href="Peachtree_Training_Certificate.pdf"
+              href="./Peachtree_Training_Certificate.pdf"
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-primary"
             >
-              View Certificate
+              👁 View Certificate
             </a>
 
+
             <!-- DOWNLOAD -->
+
             <a
-              href="Peachtree_Training_Certificate.pdf"
+              href="./Peachtree_Training_Certificate.pdf"
               download="Peachtree_Training_Certificate.pdf"
               class="btn"
             >
-              Download
+              ⬇ Download
             </a>
 
           </div>
@@ -864,9 +1087,7 @@
 
     <div class="container contact">
 
-      <h2>
-        Contact
-      </h2>
+      <h2>Contact</h2>
 
       <p>
         Email:
@@ -893,7 +1114,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          dawit360.github.io/CV
+          dawit360.github.io/CV/
         </a>
       </p>
 
@@ -904,15 +1125,4 @@
 
   <!-- =========================
        FOOTER
-  ========================== -->
-
-  <footer>
-
-    <p>
-      © 2026 Dawit Birhanu Mulu. All rights reserved.
-    </p>
-
-  </footer>
-
-</body>
-  </html>
+  =======
