@@ -12,6 +12,7 @@
   >
 
   <style>
+
     /* =========================
        RESET
     ========================== */
@@ -154,14 +155,17 @@
       object-fit: cover;
       border-radius: 50%;
       border: 3px solid #00eaff;
+
       box-shadow:
         0 0 20px rgba(0, 234, 255, 0.45),
         0 0 50px rgba(0, 234, 255, 0.15);
+
       transition: 0.4s ease;
     }
 
     .profile-picture:hover {
       transform: scale(1.04);
+
       box-shadow:
         0 0 30px rgba(0, 234, 255, 0.65),
         0 0 70px rgba(0, 234, 255, 0.2);
@@ -223,7 +227,9 @@
       font-size: 34px;
       color: #00eaff;
       margin-bottom: 40px;
-      text-shadow: 0 0 12px rgba(0,234,255,0.25);
+
+      text-shadow:
+        0 0 12px rgba(0,234,255,0.25);
     }
 
 
@@ -233,7 +239,11 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(280px, 1fr)
+      );
+
       gap: 24px;
     }
 
@@ -248,6 +258,7 @@
     .card:hover {
       transform: translateY(-6px);
       border-color: #00eaff;
+
       box-shadow:
         0 0 20px rgba(0,234,255,0.14),
         0 10px 30px rgba(0,0,0,0.25);
@@ -318,7 +329,9 @@
       color: #00eaff;
       border-color: #00eaff;
       transform: translateY(-3px);
-      box-shadow: 0 0 15px rgba(0,234,255,0.2);
+
+      box-shadow:
+        0 0 15px rgba(0,234,255,0.2);
     }
 
 
@@ -416,6 +429,7 @@
       section {
         padding: 60px 0;
       }
+
     }
 
   </style>
@@ -438,12 +452,31 @@
       </div>
 
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#documents">Documents</a></li>
-        <li><a href="#contact">Contact</a></li>
+
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+        <li>
+          <a href="#education">Education</a>
+        </li>
+
+        <li>
+          <a href="#experience">Experience</a>
+        </li>
+
+        <li>
+          <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+          <a href="#documents">Documents</a>
+        </li>
+
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+
       </ul>
 
     </div>
@@ -479,24 +512,24 @@
 
         <div class="buttons">
 
-          <!-- VIEW CV
-               IMPORTANT:
-               NO "download" ATTRIBUTE HERE
-          -->
+
+          <!-- =========================
+               VIEW CV
+               CUSTOM VIEWER
+          ========================== -->
+
           <a
-            href="./Dawit_Birhanu_Mulu_CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="./viewer.html?file=Dawit_Birhanu_Mulu_CV.pdf&title=Curriculum%20Vitae"
             class="btn btn-primary"
           >
             👁 View CV
           </a>
 
 
-          <!-- DOWNLOAD CV
-               IMPORTANT:
-               "download" ATTRIBUTE IS ONLY HERE
-          -->
+          <!-- =========================
+               DOWNLOAD CV
+          ========================== -->
+
           <a
             href="./Dawit_Birhanu_Mulu_CV.pdf"
             download="Dawit_Birhanu_Mulu_CV.pdf"
@@ -505,6 +538,8 @@
             ⬇ Download CV
           </a>
 
+
+          <!-- GITHUB -->
 
           <a
             href="https://github.com/Dawit360"
@@ -520,7 +555,8 @@
       </div>
 
 
-      <!-- EXACT IMAGE FILE NAME -->
+      <!-- PROFILE IMAGE -->
+
       <img
         src="./pro.png"
         alt="Dawit Birhanu Mulu"
@@ -540,7 +576,9 @@
 
     <div class="container">
 
-      <h2>About Me</h2>
+      <h2>
+        About Me
+      </h2>
 
       <div class="card">
 
@@ -566,17 +604,23 @@
 
     <div class="container">
 
-      <h2>Education</h2>
+      <h2>
+        Education
+      </h2>
 
       <div class="grid">
 
 
         <div class="card">
 
-          <h3>Computer Science</h3>
+          <h3>
+            Computer Science
+          </h3>
 
           <p>
-            <strong>St. Mary's University</strong>
+            <strong>
+              St. Mary's University
+            </strong>
           </p>
 
           <p>
@@ -588,7 +632,9 @@
 
         <div class="card">
 
-          <h3>Accounting & Finance</h3>
+          <h3>
+            Accounting & Finance
+          </h3>
 
           <p>
             <strong>
@@ -605,7 +651,9 @@
 
         <div class="card">
 
-          <h3>AI & Data Engineering</h3>
+          <h3>
+            AI & Data Engineering
+          </h3>
 
           <p>
             <strong>
@@ -634,7 +682,9 @@
 
     <div class="container">
 
-      <h2>Experience</h2>
+      <h2>
+        Experience
+      </h2>
 
       <div class="card">
 
@@ -651,7 +701,6 @@
         <p class="muted">
           Addis Ababa · November 12, 2024 – February 2026
         </p>
-
 
         <ul>
 
@@ -689,7 +738,9 @@
 
     <div class="container">
 
-      <h2>Skills</h2>
+      <h2>
+        Skills
+      </h2>
 
 
       <!-- ACCOUNTING -->
@@ -912,7 +963,9 @@
 
     <div class="container">
 
-      <h2>Documents</h2>
+      <h2>
+        Documents
+      </h2>
 
       <div class="grid">
 
@@ -939,28 +992,17 @@
           <div class="buttons">
 
 
-            <!--
-              VIEW BUTTON
-
-              NO DOWNLOAD ATTRIBUTE.
-              Opens PDF in a NEW TAB.
-            -->
+            <!-- VIEW CV -->
 
             <a
-              href="./Dawit_Birhanu_Mulu_CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="./viewer.html?file=Dawit_Birhanu_Mulu_CV.pdf&title=Curriculum%20Vitae"
               class="btn btn-primary"
             >
               👁 View CV
             </a>
 
 
-            <!--
-              DOWNLOAD BUTTON
-
-              HAS DOWNLOAD ATTRIBUTE.
-            -->
+            <!-- DOWNLOAD CV -->
 
             <a
               href="./Dawit_Birhanu_Mulu_CV.pdf"
@@ -997,19 +1039,17 @@
           <div class="buttons">
 
 
-            <!-- VIEW -->
+            <!-- VIEW CERTIFICATE -->
 
             <a
-              href="./Internship_Certificate.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="./viewer.html?file=Internship_Certificate.pdf&title=Internship%20Certificate"
               class="btn btn-primary"
             >
               👁 View Certificate
             </a>
 
 
-            <!-- DOWNLOAD -->
+            <!-- DOWNLOAD CERTIFICATE -->
 
             <a
               href="./Internship_Certificate.pdf"
@@ -1046,19 +1086,17 @@
           <div class="buttons">
 
 
-            <!-- VIEW -->
+            <!-- VIEW CERTIFICATE -->
 
             <a
-              href="./Peachtree_Training_Certificate.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="./viewer.html?file=Peachtree_Training_Certificate.pdf&title=Peachtree%20Training%20Certificate"
               class="btn btn-primary"
             >
               👁 View Certificate
             </a>
 
 
-            <!-- DOWNLOAD -->
+            <!-- DOWNLOAD CERTIFICATE -->
 
             <a
               href="./Peachtree_Training_Certificate.pdf"
@@ -1087,7 +1125,9 @@
 
     <div class="container contact">
 
-      <h2>Contact</h2>
+      <h2>
+        Contact
+      </h2>
 
       <p>
         Email:
@@ -1110,11 +1150,11 @@
       <p>
         Personal Website:
         <a
-          href="https://dawit360.github.io/CV/"
+          href="https://dawit360.github.io/dawit360.github.io.cv/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          dawit360.github.io/CV/
+          https://dawit360.github.io/dawit360.github.io.cv/
         </a>
       </p>
 
@@ -1125,4 +1165,15 @@
 
   <!-- =========================
        FOOTER
-  =======
+  ========================== -->
+
+  <footer>
+
+    <p>
+      © 2026 Dawit Birhanu Mulu. All rights reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
