@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Dawit Birhanu Mulu - Accounting and Computer Science professional portfolio, CV and cover letter."
+    content="Dawit Birhanu Mulu - Accounting and Computer Science professional portfolio, CV and certificates."
   >
 
   <style>
@@ -40,7 +40,10 @@
       margin: auto;
     }
 
-    /* NAVIGATION */
+    /* =========================
+       NAVIGATION
+    ========================== */
+
     nav {
       position: sticky;
       top: 0;
@@ -77,7 +80,10 @@
       color: #00eaff;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================== */
+
     .hero {
       padding: 80px 0;
     }
@@ -122,7 +128,10 @@
       box-shadow: 0 0 30px rgba(0,234,255,0.4);
     }
 
-    /* BUTTONS */
+    /* =========================
+       BUTTONS
+    ========================== */
+
     .buttons {
       display: flex;
       gap: 15px;
@@ -152,7 +161,10 @@
       color: #000;
     }
 
-    /* SECTIONS */
+    /* =========================
+       SECTIONS
+    ========================== */
+
     section {
       padding: 70px 0;
     }
@@ -164,7 +176,10 @@
       color: #00eaff;
     }
 
-    /* CARDS */
+    /* =========================
+       CARDS
+    ========================== */
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -199,7 +214,25 @@
       padding-left: 20px;
     }
 
-    /* SKILLS */
+    /* =========================
+       SKILLS CLASSIFICATION
+    ========================== */
+
+    .skill-category {
+      margin-bottom: 35px;
+    }
+
+    .skill-category h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 22px;
+      color: #ffffff;
+    }
+
+    .skill-category h3 span {
+      color: #00eaff;
+    }
+
     .skills {
       display: flex;
       flex-wrap: wrap;
@@ -220,9 +253,27 @@
       border-color: #00eaff;
       color: #00eaff;
       box-shadow: 0 0 15px rgba(0,234,255,0.2);
+      transform: translateY(-2px);
     }
 
-    /* CONTACT */
+    /* =========================
+       DOCUMENTS
+    ========================== */
+
+    .document-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .document-card .buttons {
+      margin-top: 25px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
     .contact {
       text-align: center;
     }
@@ -236,7 +287,10 @@
       color: #00eaff;
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================== */
+
     footer {
       text-align: center;
       padding: 30px;
@@ -244,8 +298,12 @@
       color: #888;
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================== */
+
     @media (max-width: 700px) {
+
       .hero-content {
         flex-direction: column-reverse;
         text-align: center;
@@ -274,13 +332,21 @@
         flex-wrap: wrap;
         justify-content: center;
       }
+
+      .profile-picture {
+        width: 190px;
+        height: 190px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
   <nav>
     <div class="container nav-container">
 
@@ -301,8 +367,12 @@
   </nav>
 
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================== -->
+
   <header class="hero">
+
     <div class="container hero-content">
 
       <div class="hero-text">
@@ -317,15 +387,15 @@
 
         <p>
           Computer Scientist and Accounting & Finance graduate with
-          interests in software development, AI, data engineering,
-          accounting systems and information technology.
+          interests in software development, artificial intelligence,
+          data engineering, accounting systems and information technology.
         </p>
 
         <div class="buttons">
 
-          <!-- VIEW BUTTON ONLY: opens the file -->
+          <!-- VIEW CV -->
           <a
-            href="assets/CV.pdf"
+            href="Dawit_Birhanu_Mulu_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             class="btn btn-primary"
@@ -333,15 +403,16 @@
             View CV
           </a>
 
-          <!-- DOWNLOAD BUTTON: remains a download button -->
+          <!-- DOWNLOAD CV -->
           <a
-            href="assets/CV.pdf"
+            href="Dawit_Birhanu_Mulu_CV.pdf"
             download="Dawit_Birhanu_Mulu_CV.pdf"
             class="btn"
           >
             Download CV
           </a>
 
+          <!-- GITHUB -->
           <a
             href="https://github.com/Dawit360"
             target="_blank"
@@ -355,18 +426,24 @@
 
       </div>
 
+      <!-- YOUR ACTUAL IMAGE -->
       <img
-        src="assets/profile.jpg"
+        src="pro.png"
         alt="Dawit Birhanu Mulu"
         class="profile-picture"
       >
 
     </div>
+
   </header>
 
 
-  <!-- ABOUT -->
+  <!-- =========================
+       ABOUT
+  ========================== -->
+
   <section id="about">
+
     <div class="container">
 
       <h2>About Me</h2>
@@ -384,11 +461,16 @@
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- EDUCATION -->
+  <!-- =========================
+       EDUCATION
+  ========================== -->
+
   <section id="education">
+
     <div class="container">
 
       <h2>Education</h2>
@@ -396,38 +478,71 @@
       <div class="grid">
 
         <div class="card">
+
           <h3>Computer Science</h3>
-          <p>St. Mary's University</p>
-          <p>Computer Science Graduate</p>
+
+          <p>
+            St. Mary's University
+          </p>
+
+          <p>
+            Computer Science Graduate
+          </p>
+
         </div>
 
+
         <div class="card">
+
           <h3>Accounting & Finance</h3>
-          <p>Addis Ababa University</p>
-          <p>College of Business and Economics</p>
+
+          <p>
+            Addis Ababa University
+          </p>
+
+          <p>
+            College of Business and Economics
+          </p>
+
         </div>
 
+
         <div class="card">
+
           <h3>AI & Data Engineering</h3>
-          <p>Qiyas-AAU Training Program</p>
-          <p>AI and Data Engineering training.</p>
+
+          <p>
+            Qiyas-AAU Training Program
+          </p>
+
+          <p>
+            AI and Data Engineering training.
+          </p>
+
         </div>
 
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- EXPERIENCE -->
+  <!-- =========================
+       EXPERIENCE
+  ========================== -->
+
   <section id="experience">
+
     <div class="container">
 
       <h2>Experience</h2>
 
       <div class="card">
 
-        <h3>Assistant Accountant — Internship</h3>
+        <h3>
+          Assistant Accountant — Internship
+        </h3>
 
         <p>
           <strong>
@@ -442,6 +557,7 @@
         <br>
 
         <ul>
+
           <li>
             Worked in the finance department as a paid intern.
           </li>
@@ -458,43 +574,147 @@
             Worked with the team to meet deadlines and support
             finance operations.
           </li>
+
         </ul>
 
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- SKILLS -->
+  <!-- =========================
+       CLASSIFIED SKILLS
+  ========================== -->
+
   <section id="skills">
+
     <div class="container">
 
       <h2>Skills</h2>
 
-      <div class="skills">
 
-        <div class="skill">Python</div>
-        <div class="skill">C</div>
-        <div class="skill">C++</div>
-        <div class="skill">C#</div>
-        <div class="skill">HTML</div>
-        <div class="skill">CSS</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">AI / ML</div>
-        <div class="skill">Data Engineering</div>
-        <div class="skill">Computer Science</div>
-        <div class="skill">Accounting</div>
-        <div class="skill">Finance</div>
-        <div class="skill">VS Code</div>
+      <!-- ACCOUNTING & FINANCE -->
+
+      <div class="skill-category">
+
+        <h3>
+          <span>▸</span> Accounting & Finance
+        </h3>
+
+        <div class="skills">
+
+          <div class="skill">Accounting Principles</div>
+          <div class="skill">Financial Records</div>
+          <div class="skill">Financial Operations</div>
+          <div class="skill">Finance</div>
+          <div class="skill">Accounting</div>
+          <div class="skill">Peachtree</div>
+
+        </div>
+
+      </div>
+
+
+      <!-- COMPUTER SCIENCE & SOFTWARE -->
+
+      <div class="skill-category">
+
+        <h3>
+          <span>▸</span> Computer Science & Software
+        </h3>
+
+        <div class="skills">
+
+          <div class="skill">Computer Science</div>
+          <div class="skill">Python</div>
+          <div class="skill">C</div>
+          <div class="skill">C++</div>
+          <div class="skill">C#</div>
+          <div class="skill">HTML</div>
+          <div class="skill">CSS</div>
+          <div class="skill">JavaScript</div>
+          <div class="skill">Software Development</div>
+
+        </div>
+
+      </div>
+
+
+      <!-- AI & DATA ENGINEERING -->
+
+      <div class="skill-category">
+
+        <h3>
+          <span>▸</span> AI & Data Engineering
+        </h3>
+
+        <div class="skills">
+
+          <div class="skill">Artificial Intelligence</div>
+          <div class="skill">Machine Learning</div>
+          <div class="skill">Data Engineering</div>
+          <div class="skill">Data Science</div>
+          <div class="skill">Natural Language Processing</div>
+          <div class="skill">Computer Vision</div>
+
+        </div>
+
+      </div>
+
+
+      <!-- TOOLS & DEVELOPMENT ENVIRONMENT -->
+
+      <div class="skill-category">
+
+        <h3>
+          <span>▸</span> Tools & Development Environment
+        </h3>
+
+        <div class="skills">
+
+          <div class="skill">VS Code</div>
+          <div class="skill">Git</div>
+          <div class="skill">GitHub</div>
+          <div class="skill">GitHub Pages</div>
+          <div class="skill">Google Colab</div>
+
+        </div>
+
+      </div>
+
+
+      <!-- PROFESSIONAL SKILLS -->
+
+      <div class="skill-category">
+
+        <h3>
+          <span>▸</span> Professional Skills
+        </h3>
+
+        <div class="skills">
+
+          <div class="skill">Teamwork</div>
+          <div class="skill">Communication</div>
+          <div class="skill">Accuracy</div>
+          <div class="skill">Problem Solving</div>
+          <div class="skill">Deadline Management</div>
+          <div class="skill">Technical Learning</div>
+
+        </div>
 
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- DOCUMENTS -->
+  <!-- =========================
+       DOCUMENTS
+  ========================== -->
+
   <section id="documents">
 
     <div class="container">
@@ -503,20 +723,28 @@
 
       <div class="grid">
 
+
         <!-- CV -->
-        <div class="card">
 
-          <h3>Curriculum Vitae</h3>
+        <div class="card document-card">
 
-          <p>
-            View my complete professional CV.
-          </p>
+          <div>
+
+            <h3>
+              Curriculum Vitae
+            </h3>
+
+            <p>
+              View my complete professional CV.
+            </p>
+
+          </div>
 
           <div class="buttons">
 
-            <!-- FIXED VIEW BUTTON -->
+            <!-- VIEW ONLY -->
             <a
-              href="assets/CV.pdf"
+              href="Dawit_Birhanu_Mulu_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-primary"
@@ -524,9 +752,9 @@
               View CV
             </a>
 
-            <!-- DOWNLOAD BUTTON UNCHANGED IN FUNCTION -->
+            <!-- DOWNLOAD -->
             <a
-              href="assets/CV.pdf"
+              href="Dawit_Birhanu_Mulu_CV.pdf"
               download="Dawit_Birhanu_Mulu_CV.pdf"
               class="btn"
             >
@@ -538,31 +766,38 @@
         </div>
 
 
-        <!-- COVER LETTER -->
-        <div class="card">
+        <!-- INTERNSHIP CERTIFICATE -->
 
-          <h3>Cover Letter</h3>
+        <div class="card document-card">
 
-          <p>
-            View my professional cover letter.
-          </p>
+          <div>
+
+            <h3>
+              Internship Certificate
+            </h3>
+
+            <p>
+              View my internship certificate.
+            </p>
+
+          </div>
 
           <div class="buttons">
 
-            <!-- FIXED VIEW BUTTON -->
+            <!-- VIEW ONLY -->
             <a
-              href="assets/Cover_Letter.pdf"
+              href="Internship_Certificate.pdf"
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-primary"
             >
-              View Cover Letter
+              View Certificate
             </a>
 
-            <!-- DOWNLOAD BUTTON -->
+            <!-- DOWNLOAD -->
             <a
-              href="assets/Cover_Letter.pdf"
-              download="Dawit_Birhanu_Mulu_Cover_Letter.pdf"
+              href="Internship_Certificate.pdf"
+              download="Internship_Certificate.pdf"
               class="btn"
             >
               Download
@@ -573,31 +808,38 @@
         </div>
 
 
-        <!-- CERTIFICATES -->
-        <div class="card">
+        <!-- PEACHTREE CERTIFICATE -->
 
-          <h3>Certificates</h3>
+        <div class="card document-card">
 
-          <p>
-            View my training and internship certificates.
-          </p>
+          <div>
+
+            <h3>
+              Peachtree Training Certificate
+            </h3>
+
+            <p>
+              View my Peachtree training certificate.
+            </p>
+
+          </div>
 
           <div class="buttons">
 
-            <!-- FIXED VIEW BUTTON -->
+            <!-- VIEW ONLY -->
             <a
-              href="assets/Certificates.pdf"
+              href="Peachtree_Training_Certificate.pdf"
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-primary"
             >
-              View Certificates
+              View Certificate
             </a>
 
-            <!-- DOWNLOAD BUTTON -->
+            <!-- DOWNLOAD -->
             <a
-              href="assets/Certificates.pdf"
-              download="Dawit_Birhanu_Mulu_Certificates.pdf"
+              href="Peachtree_Training_Certificate.pdf"
+              download="Peachtree_Training_Certificate.pdf"
               class="btn"
             >
               Download
@@ -614,12 +856,17 @@
   </section>
 
 
-  <!-- CONTACT -->
+  <!-- =========================
+       CONTACT
+  ========================== -->
+
   <section id="contact">
 
     <div class="container contact">
 
-      <h2>Contact</h2>
+      <h2>
+        Contact
+      </h2>
 
       <p>
         Email:
@@ -655,11 +902,16 @@
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
+
     <p>
       © 2026 Dawit Birhanu Mulu. All rights reserved.
     </p>
+
   </footer>
 
 </body>
