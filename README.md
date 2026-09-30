@@ -7,7 +7,7 @@ This website presents my professional background, education, technical skills, p
 🔗 Live Website
 
 Personal Website:
-https://dawit360.github.io/CV/
+https://dawit360.github.io/dawit360.github.io.cv/
 
 GitHub Profile:
 https://github.com/Dawit360
