@@ -23,16 +23,10 @@
     html,
     body {
       width: 100%;
-      height: 100%;
-      overflow: hidden;
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+      min-height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
       background: #0b0f19;
-      color: #ffffff;
+      color: white;
     }
 
 
@@ -42,20 +36,30 @@
 
     .viewer-header {
 
-      width: 100%;
-      height: 64px;
+      position: sticky;
+      top: 0;
+
+      z-index: 1000;
+
+      min-height: 64px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
-      padding: 0 18px;
+      gap: 10px;
 
-      background: #111827;
+      padding: 10px 15px;
+
+      background: rgba(11, 15, 25, 0.97);
 
       border-bottom:
         1px solid
         rgba(0, 234, 255, 0.25);
+
+      backdrop-filter: blur(10px);
 
     }
 
@@ -78,7 +82,72 @@
 
       text-overflow: ellipsis;
 
-      max-width: 70%;
+      max-width: 40%;
+
+    }
+
+
+    /* =========================
+       CONTROLS
+    ========================== */
+
+    .controls {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 7px;
+
+      flex-wrap: wrap;
+
+    }
+
+
+    .control-btn {
+
+      border:
+        1px solid
+        #00eaff;
+
+      background: transparent;
+
+      color: #00eaff;
+
+      border-radius: 6px;
+
+      padding: 7px 11px;
+
+      font-size: 14px;
+
+      cursor: pointer;
+
+      transition: 0.25s ease;
+
+    }
+
+
+    .control-btn:hover {
+
+      background: #00eaff;
+
+      color: #000;
+
+    }
+
+
+    .page-info {
+
+      color: #cccccc;
+
+      font-size: 13px;
+
+      min-width: 70px;
+
+      text-align: center;
+
     }
 
 
@@ -90,7 +159,7 @@
 
       display: inline-block;
 
-      padding: 9px 15px;
+      padding: 8px 12px;
 
       border:
         1px solid
@@ -102,53 +171,124 @@
 
       text-decoration: none;
 
-      transition: 0.3s ease;
+      font-size: 14px;
 
       white-space: nowrap;
+
+      transition: 0.25s ease;
+
     }
+
 
     .back-button:hover {
 
       background: #00eaff;
 
-      color: #000000;
+      color: #000;
 
-      box-shadow:
-        0 0 15px
-        rgba(0, 234, 255, 0.5);
     }
 
 
     /* =========================
-       PDF CONTAINER
+       PDF AREA
     ========================== */
 
-    .pdf-container {
+    #pdf-container {
 
       width: 100%;
 
-      height:
+      min-height:
         calc(100vh - 64px);
 
+      padding: 25px 10px 50px;
+
       background: #202020;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      gap: 20px;
+
     }
 
 
     /* =========================
-       PDF VIEWER
+       PDF PAGE
     ========================== */
 
-    #pdf-viewer {
-
-      width: 100%;
-
-      height: 100%;
-
-      border: none;
+    .pdf-page {
 
       display: block;
 
-      background: #ffffff;
+      background: white;
+
+      box-shadow:
+        0 5px 25px
+        rgba(0, 0, 0, 0.45);
+
+      max-width: 100%;
+
+      height: auto;
+
+    }
+
+
+    /* =========================
+       LOADING
+    ========================== */
+
+    #loading {
+
+      min-height: 60vh;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 15px;
+
+      color: #cccccc;
+
+      text-align: center;
+
+    }
+
+
+    .spinner {
+
+      width: 42px;
+
+      height: 42px;
+
+      border:
+        4px solid
+        rgba(255,255,255,0.15);
+
+      border-top:
+        4px solid
+        #00eaff;
+
+      border-radius: 50%;
+
+      animation:
+        spin 0.9s linear infinite;
+
+    }
+
+
+    @keyframes spin {
+
+      to {
+        transform: rotate(360deg);
+      }
+
     }
 
 
@@ -156,14 +296,11 @@
        ERROR
     ========================== */
 
-    .error {
+    #error-message {
 
       display: none;
 
-      width: 100%;
-
-      height:
-        calc(100vh - 64px);
+      min-height: 70vh;
 
       align-items: center;
 
@@ -172,7 +309,9 @@
       text-align: center;
 
       padding: 30px;
+
     }
+
 
     .error-box {
 
@@ -187,20 +326,25 @@
         rgba(255,255,255,0.1);
 
       border-radius: 15px;
+
     }
 
-    .error h2 {
+
+    .error-box h2 {
 
       color: #ff5c5c;
 
       margin-bottom: 12px;
+
     }
 
-    .error p {
+
+    .error-box p {
 
       color: #cccccc;
 
       margin-bottom: 20px;
+
     }
 
 
@@ -208,33 +352,67 @@
        MOBILE
     ========================== */
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
 
       .viewer-header {
 
-        height: 58px;
+        padding: 9px 8px;
 
-        padding: 0 10px;
+        gap: 6px;
+
       }
+
 
       .viewer-title {
 
-        font-size: 14px;
+        font-size: 13px;
 
-        max-width: 65%;
+        max-width: 30%;
+
       }
+
+
+      .controls {
+
+        gap: 4px;
+
+      }
+
+
+      .control-btn {
+
+        padding: 6px 8px;
+
+        font-size: 12px;
+
+      }
+
+
+      .page-info {
+
+        min-width: 55px;
+
+        font-size: 11px;
+
+      }
+
 
       .back-button {
 
-        padding: 7px 10px;
+        padding: 7px 8px;
 
-        font-size: 13px;
+        font-size: 12px;
+
       }
 
-      .pdf-container {
 
-        height:
-          calc(100vh - 58px);
+      #pdf-container {
+
+        padding:
+          15px 5px 35px;
+
+        gap: 12px;
+
       }
 
     }
@@ -248,16 +426,76 @@
 
 
   <!-- =========================
-       VIEWER HEADER
+       HEADER
   ========================== -->
 
   <header class="viewer-header">
+
 
     <div
       id="document-title"
       class="viewer-title"
     >
-      Document Viewer
+      Document
+    </div>
+
+
+    <div class="controls">
+
+
+      <button
+        id="previous-page"
+        class="control-btn"
+        type="button"
+      >
+        ◀
+      </button>
+
+
+      <span
+        id="page-info"
+        class="page-info"
+      >
+        Page 1
+      </span>
+
+
+      <button
+        id="next-page"
+        class="control-btn"
+        type="button"
+      >
+        ▶
+      </button>
+
+
+      <button
+        id="zoom-out"
+        class="control-btn"
+        type="button"
+      >
+        −
+      </button>
+
+
+      <button
+        id="zoom-reset"
+        class="control-btn"
+        type="button"
+      >
+        100%
+      </button>
+
+
+      <button
+        id="zoom-in"
+        class="control-btn"
+        type="button"
+      >
+        +
+      </button>
+
+
     </div>
 
 
@@ -268,58 +506,69 @@
       ← Back
     </a>
 
+
   </header>
 
 
   <!-- =========================
-       PDF VIEWER
+       PDF CONTENT
   ========================== -->
 
-  <main class="pdf-container">
-
-    <iframe
-      id="pdf-viewer"
-      title="PDF Document Viewer"
-      loading="eager"
-    ></iframe>
+  <main id="pdf-container">
 
 
-    <!-- ERROR MESSAGE -->
+    <div id="loading">
 
-    <div
-      id="error-message"
-      class="error"
-    >
+      <div class="spinner"></div>
+
+      <p>
+        Loading document...
+      </p>
+
+    </div>
+
+
+    <div id="error-message">
 
       <div class="error-box">
 
         <h2>
-          Document Not Found
+          Unable to display document
         </h2>
 
-        <p>
-          The requested document could not be loaded.
-          Please return to the documents section.
+        <p id="error-text">
+          The document could not be loaded.
         </p>
 
         <a
           href="./index.html#documents"
           class="back-button"
         >
-          Return to Documents
+          ← Back to Documents
         </a>
 
       </div>
 
     </div>
 
+
   </main>
 
 
-  <!-- JAVASCRIPT -->
+  <!-- =========================
+       PDF.JS
+  ========================== -->
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
+  ></script>
+
+
+  <!-- YOUR JAVASCRIPT -->
 
   <script src="./viewer.js"></script>
 
+
 </body>
 
-</html>
+  </html>
